@@ -1,4 +1,8 @@
-// main goes in this file
+/*********************
+Preston Harrod 
+Program 5: String Class
+Due 3/1/19
+********************/
 #include <iostream>
 #include "MyString.h"
 #include <string>
@@ -8,9 +12,6 @@ MyString test();
 int main()
 {
 
-	/*
-	
-	*/
 	MyString s1;
 	MyString s2("billy");
 	MyString s3(s2);
@@ -51,11 +52,22 @@ int main()
 	cout << s << endl;
 }
 
-void display(MyString & other)
+/*
+display
+test passing class to function
+Params: MyString class
+return: none
+*/
+void display(MyString & other) 
 {
 	cout << other << endl;
 }
-
+/*
+test
+test returning MyString class from function
+Params: none
+Return: MyString class
+*/
 MyString test()
 {
 	MyString s("Passed from function test");

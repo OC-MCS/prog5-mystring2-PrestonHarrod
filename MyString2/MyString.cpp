@@ -3,7 +3,12 @@
 #include <iostream>
 #include "MyString.h"
 using namespace std;
+/*
 
+Constructor that sets value of string to null byte
+Params: none
+Returns: none
+*/
 MyString::MyString()
 {
 	int len = 1;
@@ -12,7 +17,11 @@ MyString::MyString()
 }
 
 
-
+/*
+Constructor that sets value of string to the parameter entered
+Params: user string input
+Returns: none
+*/
 MyString::MyString(const char *input)
 {
 	int len = strlen(input) + 1;
@@ -21,7 +30,12 @@ MyString::MyString(const char *input)
 }
 
 
-
+/*
+Copy constructor that assigns the string of parameter entered
+to the string of the instance created
+Params: MyString class
+Returns: None
+*/
 MyString::MyString(const MyString& S)
 {
 	int len = strlen(S.str) + 5; 
@@ -30,13 +44,19 @@ MyString::MyString(const MyString& S)
 }
 
 
-
+/*
+Deconstructor
+*/
 MyString::~MyString()
 {
 	delete[] str;
 }
 
-
+/*
+Overload operator for ==
+Params: MyString classes
+Returns: bool
+*/
 bool operator == (const MyString & S1, const MyString & S2)
 {
 	bool status = true;
@@ -55,7 +75,11 @@ bool operator == (const MyString & S1, const MyString & S2)
 }
 
 
-
+/*
+Overload operator for =
+Params: MyString class
+Returns: instance
+*/
 MyString& MyString::operator =(const MyString &S)
 {
 	if (this != &S)
@@ -67,9 +91,11 @@ MyString& MyString::operator =(const MyString &S)
 	return *this;
 }
 
-
-
-
+/*
+Overload operator for cout
+Params: outstream, MyString class
+Returns: outstream
+*/
 ostream & operator<<(ostream &OS, const MyString &S)
 {
 	OS << S.c_str();
@@ -77,7 +103,11 @@ ostream & operator<<(ostream &OS, const MyString &S)
 }
 
 
-
+/*
+Overload operator for + 
+Params: MyString classes
+Returns: MyString class
+*/
 MyString operator + (const MyString& S1, const MyString & S2)
 {
 	int size = strlen(S1.str) + strlen(S2.str) + 1;
